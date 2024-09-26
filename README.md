@@ -9,8 +9,13 @@ SparSynergy is an open-source RTL implementation that includes Tensor Core [1], 
 - **BitWave**: Accelerated data processing using bit-column-serial computation. BitWave represents bit-level sparse accelerators that provides insights into the advantages of our multi-level sparsity approach.
 - **SparSynergy (Ours)**: Multi-Level Sparsity Support. Facilitating flexible acceleration of deep learning models.
 
-reference:
+----
+
+References:
+
 [1] NVIDIA, “Nvidia tesla v100 gpu architecture,” tech. rep., 2017
-[2] C. Jack et al., “Nvidia a100 tensor core gpu: Performance and innovation,” IEEE Micro, vol. 41, no. 2, pp. 29–35, 2021.
+
+[2] C. Jack et al., “Nvidia a100 tensor core gpu: Performance and innovation,” IEEE Micro, vol. 41, no. 2, pp. 29–35, 2021.
+
 [3] S. Man et al., “Bitwave: Exploiting column-based bit-level sparsity for deep learning acceleration,” in HPCA, pp. 732–746, 2024.
 
