@@ -1,7 +1,7 @@
-# SparSynergy
+# SparSynergy & Baselines
 
 ## Project Overview
-SparSynergy is an open-source RTL implementation that includes Tensor Core [1], Sparse Tensor Core[2], BitWave[3], and SparSynergy. This project is based on the article *"SparSynergy: Unlocking Flexible and Efficient DNN Acceleration through Multi-Level Sparsity"* and aims to provide flexible and efficient solutions for deep neural network acceleration.
+This is an open-source RTL implementation that includes Tensor Core [1], Sparse Tensor Core[2], BitWave[3], and SparSynergy. This project is based on the article *"SparSynergy: Unlocking Flexible and Efficient DNN Acceleration through Multi-Level Sparsity"* and aims to provide flexible and efficient solutions for deep neural network acceleration.
 
 ## Features
 - **Tensor Core**: Efficient dense matrix multiplication support. It is the baseline for evaluating the performance gains achieved through sparsity exploitation.
