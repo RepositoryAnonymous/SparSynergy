@@ -111,7 +111,7 @@ module bTensorCore(
 
     assign result_out = {result_out3, result_out2, result_out1, result_out0};
 
-    // bOctet0 实例化
+    // bOctet0  
     bOctet bOctet0(
         .clk                (clk),
         .rst                (rst),
@@ -128,7 +128,7 @@ module bTensorCore(
         .result_out         (result_out0)
     );
 
-    // bOctet1 实例化
+    // bOctet1 
     bOctet bOctet1(
         .clk                (clk),
         .rst                (rst),
@@ -145,7 +145,7 @@ module bTensorCore(
         .result_out         (result_out1)
     );
 
-    // bOctet2 实例化
+    // bOctet2  
     bOctet bOctet2(
         .clk                (clk),
         .rst                (rst),
@@ -162,7 +162,7 @@ module bTensorCore(
         .result_out         (result_out2)
     );
 
-    // bOctet3 实例化
+    //  
     bOctet bOctet3(
         .clk                (clk),
         .rst                (rst),

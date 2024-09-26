@@ -28,8 +28,8 @@ module bThreadgroup(
     input   wire        [31:0] weight_column2, // used in 1/8 mode
     input   wire        [31:0] weight_column3,
     input   wire        [31:0] weight_sign, // weight_sign 4 * 8b
-    input   wire        [7:0]  weight_sel0_level0, // 4行，每行4-2 
-    input   wire        [15:0] weight_sel0_level1, // 4*2个4数，4-2需要4bit
+    input   wire        [7:0]  weight_sel0_level0, //  
+    input   wire        [15:0] weight_sel0_level1, //  
     input   wire        [7:0]  weight_sel1_level0,
     input   wire        [15:0] weight_sel1_level1,
     input   wire        [7:0]  weight_sel2_level0,

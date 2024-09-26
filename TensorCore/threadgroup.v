@@ -36,7 +36,7 @@ module threadgroup (
     output  wire signed [15:0] result3
 );
 
-    // 第一个 FEDP 实例
+    //  
     FEDP DP1 (
         .clk        (clk),
         .rst        (rst),
@@ -52,7 +52,7 @@ module threadgroup (
         .result     (result0)
     );
 
-    // 第二个 FEDP 实例
+    // 
     FEDP DP2 (
         .clk        (clk),
         .rst        (rst),
@@ -68,7 +68,7 @@ module threadgroup (
         .result     (result1)
     );
 
-    // 第三个 FEDP 实例
+    //  
     FEDP DP3 (
         .clk        (clk),
         .rst        (rst),
@@ -84,7 +84,7 @@ module threadgroup (
         .result     (result2)
     );
 
-    // 第四个 FEDP 实例
+    //  
     FEDP DP4 (
         .clk        (clk),
         .rst        (rst),

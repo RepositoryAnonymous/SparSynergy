@@ -21,17 +21,17 @@ generate
             PE PE_inst (
                 .clk               (clk),
                 .rst               (rst),
-                .activations       (activations[i*256+255 : i*256]),            // 每行一个 activations 信号
+                .activations       (activations[i*256+255 : i*256]),            //  
                 .activation_valid  (activation_valid),
-                .weight_column     (weight_column[j*32+31 : j*32]),          // 每行一个 weight_column 信号
-                .weight_sign_en    (weight_sign_en),            // 每行一个 weight_sign 信号
+                .weight_column     (weight_column[j*32+31 : j*32]),          // 
+                .weight_sign_en    (weight_sign_en),            //  
                 .weight_valid      (weight_valid),
-                .shift_offset      (shift_offset[j*12+11 : j*12]),           // 每行一个 shift_offset 信号
-                .acc_en            (acc_en),                 // 每行一个 acc_en 信号
+                .shift_offset      (shift_offset[j*12+11 : j*12]),           //  
+                .acc_en            (acc_en),                 //  
                 .zcip_done         (zcip_done[j]),
-                .result            (result[(i*32+j)*64+63 : (i*32+j)*64]),              // 每个 PE 对应一个 result
-                // .status            (status[(i*32+j)*2+1 : (i*32+j)*2]),              // 每个 PE 对应一个 status
-                .done              (done[i*32+j])                 // 每个 PE 对应一个 done
+                .result            (result[(i*32+j)*64+63 : (i*32+j)*64]),              //  
+                // .status            (status[(i*32+j)*2+1 : (i*32+j)*2]),              //  
+                .done              (done[i*32+j])                 //  
             );
         end
     end

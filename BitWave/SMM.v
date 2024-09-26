@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: Yang Jingkui
+// Engineer:  
 // 
 // Create Date: 2024/08/27 12:15:18
 // Design Name: Sign-magnitude bit-serial multiplier

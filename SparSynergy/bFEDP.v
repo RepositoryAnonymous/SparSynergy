@@ -21,17 +21,17 @@
 
 
 module bFEDP(
-    input  wire             clk,          // 时钟信号
-    input  wire             rst,          // 复位信号，低电平有效
-    input  wire [7:0]       weight_column0,      // 8位有符号权重输入
+    input  wire             clk,          //  
+    input  wire             rst,          //  
+    input  wire [7:0]       weight_column0,      //  
     input  wire [7:0]       weight_column1,
     input  wire [7:0]       weight_column2,
     input  wire [7:0]       weight_column3,
     input  wire [7:0]       weight_sign,
-    input  wire [63:0]      activations,  // 8*8位有符号激活值输入
-    input  wire [11:0]      shift_offset, // 4*3bit offset
-    input  wire signed [15:0] partial_sum, // 16位有符号部分和输入
-    output reg signed  [15:0] result        // 16位有符号结果输出
+    input  wire [63:0]      activations,  //  
+    input  wire [11:0]      shift_offset, //  
+    input  wire signed [15:0] partial_sum, // 
+    output reg signed  [15:0] result         
     );
 
     wire [15:0] product0;
@@ -39,7 +39,7 @@ module bFEDP(
     wire [15:0] product2;
     wire [15:0] product3;
 
-    // 第一级：计算乘积
+    //  
     reg signed [15:0] product0_stage1;
     reg signed [15:0] product1_stage1;
     reg signed [15:0] product2_stage1;
@@ -102,7 +102,7 @@ module bFEDP(
         end
     end
 
-    // 第二级：累加乘积并加上部分和
+    //  
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             result <= 16'b0;

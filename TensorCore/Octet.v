@@ -80,17 +80,17 @@ module Octet#(
     ) Octet_controller (
         .clk            (clk),
         .rst            (rst),
-        // TC提供的信号
+        //  
         .start          (start),
         .fetch_done     (fetch_done),
-        // buffer提供的信号
+        //  
         .buffer_ready   (a_ready & b_ready & c_ready),
-        // 输出给TC控制器
+        // 
         .idle           (idle),
         .fetch          (fetch),
         .compute        (compute),
         .write_back     (write_back),
-        // 输出给Octet内部
+        //  
         .a_wr_en        (a_wr_en),
         .a_rd_en        (a_rd_en),
         .a_rd_addr      (a_rd_addr),

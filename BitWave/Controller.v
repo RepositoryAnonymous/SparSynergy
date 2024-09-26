@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: Yang Jingkui
+// Engineer:  
 // 
 // Create Date: 2024/08/27 09:39:16
 // Design Name: Top Controller
@@ -28,7 +28,7 @@ module Controller(
     input wire          zcip_done,
     input wire          empty,
     input wire [223:0]  index_vector_buffer,
-    input wire          index_en, // 更新index_vector buffer
+    input wire          index_en, //  index_vector buffer
     output reg [1:0]   a_mode,
     output reg [1:0]   w_mode,
     output reg [5:0]   w_read_address,
@@ -46,7 +46,7 @@ module Controller(
     output reg         done
     );
 
-    // 状态定义
+    //  
     parameter IDLE          = 3'd0;
     parameter FETCH_DATA    = 3'd1;
     parameter DISPATCH      = 3'd2;
@@ -76,7 +76,7 @@ module Controller(
         end
     end
 
-    // 状态机：下一个状态逻辑
+    //  
     always @(*) begin
         next_state = current_state;
         case (current_state)
@@ -103,7 +103,7 @@ module Controller(
             end
 
             DISPATCH: begin
-                if (zcip_done) begin  // 所有ZCIP完成
+                if (zcip_done) begin  //  
                     next_state = COMPUTE;
                 end
             end
@@ -123,7 +123,7 @@ module Controller(
             end
         endcase
     end
-    // 状态更新
+    //  
     always@(posedge clk or posedge rst) begin
         if (rst) begin
             current_state <= 0;
@@ -140,7 +140,7 @@ module Controller(
         end
     end
 
-    // 输出逻辑
+    //  
     always @(*) begin
         a_mode              = 2'b00;
         w_mode              = 2'b00;
@@ -172,10 +172,10 @@ module Controller(
             end
 
             FETCH_DATA: begin
-                // 设置 Dispatcher 模块读取地址
+                //   Dispatcher 
                 a_read_address = a_read_address + 1;
                 w_read_address = w_read_address + 1;
-                en = 1'b1;  // 启动数据获取
+                en = 1'b1;  //  
             end
 
             DISPATCH: begin
@@ -183,8 +183,8 @@ module Controller(
             end
 
             COMPUTE: begin
-                // 启动 PE 计算
-                acc_en = 2'b11;  // 启动累加器
+                // PE 
+                acc_en = 2'b11;  //  
                 if (reg_sel) begin
                     index_vector = index_vector_reg1;
                 end else begin
@@ -193,7 +193,7 @@ module Controller(
             end
 
             // CHECK_DONE: begin
-            //     // 检查所有模块是否完成
+            //     //
             //     if (pe_done) begin
             //         done <= 1'b1;
             //     end

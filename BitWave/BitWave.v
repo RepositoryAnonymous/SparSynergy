@@ -34,10 +34,10 @@ module BitWave(
     // output wire [1:0] status
 );
 
-    wire [223:0]    index_vector; // 输入的 index_vector，用于 ZCIP_array
-    wire [1:0]      acc_en;              // 用于 PE_array 的 accumulator enable
+    wire [223:0]    index_vector; //   index_vector for ZCIP_array
+    wire [1:0]      acc_en;              // for  PE_array  accumulator enable
 
-    // 控制器信号
+    //  
     wire [1:0]  a_mode;
     wire [1:0]  w_mode;
     wire [5:0]  w_read_address;
@@ -53,17 +53,17 @@ module BitWave(
     wire [5:0]    w_write_address;
     wire [5:0]    a_write_address;
 
-    // ZCIP_array 输出信号
+    // ZCIP_array 
     wire [95:0]     shift_offset;
     wire [31:0]     valid;
     wire [31:0]     zcip_done;
 
-    // PE_array 输出信号
+    // PE_array  
     // wire [8191:0] 	result;
     // wire [255:0] 	status;
     wire [127:0]    pe_done;
 
-    // Dispatcher 输出信号
+    // Dispatcher 
     wire [1023:0] activations_out;
     wire [1023:0] weight_columns_out;
     wire          empty;
@@ -71,7 +71,7 @@ module BitWave(
     wire          index_en;
 
 
-    // 实例化 ZCIP_array
+    //   ZCIP_array
     ZCIP_array zcip_array_inst (
         .clk(clk),
         .rst(rst),
@@ -81,7 +81,7 @@ module BitWave(
         .done(zcip_done)
     );
 
-    // 实例化 Dispatcher
+    // Dispatcher
     Dispatcher dispatcher_inst (
         .clk(clk),
         .rst(rst),
@@ -104,7 +104,7 @@ module BitWave(
         .done(dispatcher_done)
     );
 
-    // 将 Dispatcher 的输出分配给 PE_array 的输入
+    //   Dispatcher  to PE_array 
     // assign activations[0] = activations_out[255:0];
     // assign activations[1] = activations_out[511:256];
     // assign activations[2] = activations_out[767:512];
@@ -143,14 +143,14 @@ module BitWave(
     // assign weight_columns[30] = weight_columns_out[991:960];
     // assign weight_columns[31] = weight_columns_out[1023:992];
 
-    // 实例化 PE_array
+    //   PE_array
     PE_array pe_array_inst (
         .clk(clk),
         .rst(rst),
         .activations(activations_out),
         .activation_valid(activation_valid),
         .weight_column(weight_columns_out),
-        .weight_sign_en (weight_sign_en),       // 假设 weight_sign 与 weight_column 相同
+        .weight_sign_en (weight_sign_en),       //  weight_sign =  weight_column  
         .weight_valid(weight_valid),
         .shift_offset(shift_offset),
         .acc_en(acc_en),
@@ -160,7 +160,7 @@ module BitWave(
         .done(pe_done)
     );
 
-    // 实例化 Controller
+    //  Controller
     Controller controller_inst (
         .clk(clk),
         .rst(rst),

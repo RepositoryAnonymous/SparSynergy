@@ -28,12 +28,6 @@ module TC(
     output wire [511:0]     result_out
     );
 
-    // 以int8的tensor core为例
-    // 每个thread group中 A两行，B两列，组成四个结果
-    // B buffer数据由两个thread group共享，因此
-    // A buffer 需要2*4*4个数，共32B，每拍输出2*2*4*8b = 128b
-    // B buffer 需要4*8个数，共32B，每拍输出2*4*8b = 64b
-    // C buffer 需要8*8个数，用int16存储，共128B，每拍输出8个数 8*16b = 128b
 
     localparam A_DATA_WIDTH = 128;
     localparam A_BUFFER_SIZE = 32;

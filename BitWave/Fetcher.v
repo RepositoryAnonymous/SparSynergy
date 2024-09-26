@@ -23,16 +23,16 @@
 // module Fetcher(
 //     input wire          clk,
 //     input wire          rst,
-//     input wire [5:0]    w_read_address,    // 选择要读取的片上缓冲区
-//     input wire [5:0]    a_read_address,    // 要读取的地址
-//     input wire          en,               // 开始读取信号
-//     output reg [1024:0] w_out,         // 读取的数据输出
-//     output reg [1024:0] a_out,         // 读取的数据输出
-//     output reg          data_valid,             // 数据有效信号
-//     output reg          done                    // 读取完成信号
+//     input wire [5:0]    w_read_address,    //  
+//     input wire [5:0]    a_read_address,    //  
+//     input wire          en,               //  
+//     output reg [1024:0] w_out,         // 
+//     output reg [1024:0] a_out,         //  
+//     output reg          data_valid,             //  
+//     output reg          done                    //  
 // );
 
-//     reg [1023:0] a_buffer [0:63];            // 假设每个缓冲区有64个1024位的数据
+//     reg [1023:0] a_buffer [0:63];            //  
 //     reg [1023:0] w_buffer [0:63];
 
 //     always @(posedge clk or posedge rst) begin

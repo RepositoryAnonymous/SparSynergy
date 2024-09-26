@@ -30,8 +30,8 @@ module bDP(
 	output reg [15:0] result
 );
 
-	wire [7:0] partial_sum;              // Partial sum for the bit-column
-    reg [15:0] aligned_sum;             // Aligned sum after shifting
+	wire [7:0] partial_sum;              //  
+    reg [15:0] aligned_sum;             // 
 
 	wire [7:0] act0;
 	wire [7:0] act1;

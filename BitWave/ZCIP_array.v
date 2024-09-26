@@ -23,10 +23,10 @@
 module ZCIP_array(
     input wire clk,
     input wire rst,
-    input wire [223:0] index_vector,  // 每个ZCIP模块都有一个独立的index_vector输入，一共32 * 7bit
-    output wire [95:0] shift_offset, // 每个ZCIP模块产生一个shift_offset输出，一共32 *3bit
-    output wire [31:0]  valid,              // 每个ZCIP模块都有一个valid输出
-    output wire [31:0]  done                // 每个ZCIP模块都有一个done输出
+    input wire [223:0] index_vector,  //  
+    output wire [95:0] shift_offset, //  
+    output wire [31:0]  valid,              //  
+    output wire [31:0]  done                //  
 );
 
 genvar i;
@@ -35,10 +35,10 @@ generate
         ZCIP zcip_inst (
             .clk          (clk),
             .rst          (rst),
-            .index_vector (index_vector[i*7+6 : i*7]),  // 将对应的index_vector输入连接到ZCIP模块
-            .shift_offset (shift_offset[i*3+2 : i*3]),  // 将ZCIP的shift_offset输出连接到数组中
-            .valid        (valid[i]),         // 将ZCIP的valid输出连接到数组中
-            .done         (done[i])           // 将ZCIP的done输出连接到数组中
+            .index_vector (index_vector[i*7+6 : i*7]),  // 
+            .shift_offset (shift_offset[i*3+2 : i*3]),  // 
+            .valid        (valid[i]),         //  
+            .done         (done[i])           //  
         );
     end
 endgenerate
